@@ -1,0 +1,11 @@
+<h1>Hello there!</h1>
+{% if form %}
+<form method="POST" action="">
+{% csrf_token %}
+	{{ form }}
+	<input type = "submit" value = "Sign Up">
+</form>
+{% endif %}
+{% if error %}
+<p><strong>ERROR:</strong>{{ error }}</p>
+{% endif %}
