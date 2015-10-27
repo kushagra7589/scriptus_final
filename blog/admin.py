@@ -1,13 +1,15 @@
 from django.contrib import admin
+from . import models
+from .forms import BlogForm, PostForm, BlogFormAdmin
 
-from .models import Author
-from .forms import AuthorForm
+class BlogAdmin(admin.ModelAdmin):
+	list_display = ["__unicode__", "author", "no_of_posts", "blog_created", "blog_updated"]
+	form = BlogFormAdmin
 
-# Register your models here.
-class AuthorAdmin(admin.ModelAdmin):
-	list_display = ["__unicode__", "email", "name"]
-	form = AuthorForm
-	#class Meta:
-	#	model = Author
+class PostAdmin(admin.ModelAdmin):
+	list_display = ["__unicode__", "blog", "no_of_likes", "no_of_comments", "post_created", "post_updated"]
+	form = PostForm
 
-admin.site.register(Author, AuthorAdmin)
+admin.site.register(models.Blog, BlogAdmin)
+admin.site.register(models.Post, PostAdmin)
+admin.site.register(models.Comment)

@@ -1,0 +1,205 @@
+{% load staticfiles %}
+
+<link href='https://fonts.googleapis.com/css?family=Sigmar+One|Bangers|Righteous|Permanent+Marker|Paytone+One|Lora|Luckiest+Guy' rel='stylesheet' type='text/css'>
+
+<link href='https://fonts.googleapis.com/css?family=Pacifico|Bevan|Alfa+Slab+One|Permanent+Marker|Paytone+One|Fugaz+One' rel='stylesheet' type='text/css'>
+
+<link href='https://fonts.googleapis.com/css?family=Montserrat|Fjalla+One|Anton|Francois+One' rel='stylesheet' type='text/css'>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+
+<style>
+
+    .b{
+        font-family: 'Kilogram';
+	    font-size: 25px;
+	   color: black;
+	   padding: 30px 10px;
+	   text-decoration: none;
+    }
+
+html { 
+/*    background: url('{ %url back.png}'),url('back.png') no-repeat center center fixed #000; */
+    background-color: #FDC153;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    li {
+        float: right;
+        display: inline;
+    }
+
+    
+    .margin{
+        margin: auto;
+        height:10%;
+    }
+    
+    .head{
+        position: absolute;
+        left: 10px;
+        top: 0px;
+        font-size: 25px;
+        font-family: 'Lora', serif;
+        text-decoration:none;
+        color: white;
+    }
+    
+    h1{
+	   font-family: 'Kilogram';
+	   font-size: 100px;
+	   color: white;
+	   text-align: center; 
+    }
+    .form{
+        margin-left:5%;
+        font-family: "Open Sans";
+        font-size: 150%;
+        color:#ffffff;
+    }
+
+      input[type=text] {
+  color:#000;
+  background: #c2c2d6; /* Old browsers */
+  width:200px;
+  height:40px;
+  margin: 0 auto 10px auto;
+  margin-left: 0%;
+  font-size:14px;
+  padding-left:15px;
+  border:none; 
+  border-radius:0;
+  border-top: 1px solid #92c5e2;
+  border-right: 1px solid #92c5e2;
+}
+
+    input[type=submit] {
+        color: #000;
+        background-color:#c2c2d5;
+        font-size: 14px;
+        height: 40px;
+        border: none;
+        /*margin: 0 auto 0 17px;*/
+        padding: 0 20px 0 20px;
+        border-radius:0;
+        cursor: pointer;
+    }
+
+    
+    img{
+        position: absolute;
+        left: 10px;
+        top: 10px;
+	   height:60px;
+        width:40px
+    }
+    
+    a:hover{
+	color:#8585AD;
+    }
+    
+    .form1 {
+        background-color: rgba(0, 0 , 0, 0.60);
+        width: 900px;
+    }
+    
+    .center{
+        position: inherit;
+        margin-left: 25%;
+        margin-top: 5%;
+    }
+
+    @media screen and (max-width: 786px){
+
+        .hand
+{   margin-top: 1%; 
+    text-indent: 80px;
+    font-family: 'Arizonia', cursive;
+    margin-left: 2%;
+    font-size:400%;
+}
+img
+{
+    height:30px;
+        width:20px
+
+}
+ h1{
+       font-family: 'Kilogram';
+       font-size: 350%;
+       color: white;
+       text-align: center; 
+    }
+    .form1 {
+        background-color: rgba(0, 0 , 0, 0.60);
+        width: 450px;
+        margin-left: -2em;
+    }
+    .margin{
+        margin: auto;
+        height:12%;
+    }
+
+}
+</style>
+
+<body>
+    <div class="margin w3-teal ">
+         {% if user.is_authenticated %}  
+            <a href="{% url 'dashboard' %}"> <img id="my-img" src="{% static 'images/S.png' %}" onmouseover="hover(this);" onmouseout="unhover(this);" /></a>
+            <ul>
+            <li><a class="b " href="#">{{ request.user }}</a></li>
+            <li><a class="b " href="{% url 'logout' %}">Logout</a></li>
+        {% else %}
+            <a href="{% url 'index' %}"> <img id="my-img" src="{% static 'images/S.png' %}" onmouseover="hover(this);" onmouseout="unhover(this);" /></a>
+            <li><a class="b " href="{% url 'login' %}">Login</a></li>
+            <li><a class="b " href="{% url 'signup' %}">Sign up</a></li>
+        {% endif %}
+        </ul>
+    </div>
+    <div class="center">
+    <div class="form1">
+    <header>
+        <h1>Archive</h1>
+
+
+    <p class="form">By Year: <form method="post" action="" name="yearform" class="form">{% csrf_token %}
+    <input type="text" placeholder="Year" name="year">
+    <input type="submit" value="Go" name="yearsubmit" class="w3-btn w3-teal">
+    </form><br></p>
+    <p class="form">By Month: <form method="post" action="" name="monthform" class="form">{% csrf_token %}
+    <input type="text" placeholder="Year" name="year">
+    <input type="text" placeholder="Month" name="month">
+    <input type="submit" value="Go" name="monthsubmit" class="w3-btn w3-teal">
+    </form><br></p>
+    <p class="form">By Day: <form class="form" method="post" action="" name="dayform">{% csrf_token %}
+    <input type="text" placeholder="Year" name="year">
+    <input type="text" placeholder="Month" name="month">
+    <input type="text" placeholder="Day" name="day">
+    <input type="submit" value="Go" name="daysubmit" class="w3-btn w3-teal">
+    </form></p>
+    <br>
+    <br>
+    </header>
+    </div>
+    </div>
+<script>
+function hover(element){
+    element.setAttribute('src', "{% static 'images/s1.png' %}");
+}
+
+function unhover(element){
+    element.setAttribute('src', "{% static 'images/S.png' %}");
+}
+</script>
+</body>

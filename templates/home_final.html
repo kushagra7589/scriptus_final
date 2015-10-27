@@ -1,0 +1,288 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+<link href='https://fonts.googleapis.com/css?family=Sigmar+One|Bangers|Righteous|Permanent+Marker|Paytone+One|Luckiest+Guy' rel='stylesheet' type='text/css'>
+
+<link href='https://fonts.googleapis.com/css?family=Pacifico|Bevan|Alfa+Slab+One|Permanent+Marker|Paytone+One|Fugaz+One' rel='stylesheet' type='text/css'>
+
+<link href='https://fonts.googleapis.com/css?family=Montserrat|Fjalla+One|Anton|Francois+One' rel='stylesheet' type='text/css'>
+
+ <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+<link href='https://fonts.googleapis.com/css?family=Berkshire+Swash|Rancho|Merienda+One|Arizonia' rel='stylesheet' type='text/css'>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<style>
+
+    #my-img{
+        position: absolute;
+        left: 0%;
+        top:10px;
+        left: 15px;
+        text-decoration:none;
+        color:black;
+        
+
+    }
+body{
+    
+	background-color: #cccccc;
+}
+html,body
+{
+  width:100%;
+  height:100%;
+}
+
+div.title{
+	margin: auto;
+    background-image: url('{% static "images/final_final_1.jpg" %}');
+	background-size: cover;
+    background-repeat:no-repeat;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-position:center;
+}
+
+.a{
+	font-family: 'Lora';
+	font-size: 25px;
+	color: white;
+	padding: 0px 60px; 
+	margin-right: 850px;
+	text-decoration: none;
+}
+.archive{
+	font-family: "Open Sans";
+	font-size: 150%;
+	margin-left: -10%;
+	color: #000000;
+}
+
+.b{
+	font-family: 'Kilogram';
+	font-size: 30px;
+	color: black;
+	padding: 20px 20px;
+	text-decoration: none;
+
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: right;
+    display: inline;
+}
+
+p
+{
+
+  font-family: 'Open Sans';
+  font-size: 100px;
+  color: white;
+  font-weight: 900;
+  text-align: center;
+  position: relative;
+  top: 35px;
+  left: 8px;
+
+}
+
+div.featured{
+	margin: 0%;
+	background-color: #CACDCC;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin-top:20%;
+
+}
+
+h1{
+	font-family: 'Kilogram', sans-serif;
+	font-size: 80px;
+	color: black;
+	margin-left:32%;
+}
+
+h2{
+	text-indent: 100px;
+    font-family: 'Bevan', cursive;
+    color: black;
+}
+
+h3{
+	text-indent: 100px;
+	font-family: 'Lora', cursive;
+	
+}
+
+h4{
+	text-indent: 100px;
+	font-family: 'Bevan', cursive;
+}
+a:hover
+{
+	color:#8585AD;
+}
+div.head{
+	background:url(S.png);
+}
+div.head:hover
+{
+	background:url(s1.png);
+}
+
+#intro
+{
+	font-family:Lora;
+	font-weight:800;
+	font-size:50px;
+	
+	margin-top:29%;
+	
+}
+.hand
+{	margin-top: 1%;	
+	text-indent: 100px;
+    font-family: 'Arizonia', cursive;
+	margin-left: 16%;
+	font-size:8em;
+}
+img
+{
+	height:60px;
+        width:40px
+
+}
+@media screen and (max-width: 786px){
+
+#intro
+{
+	font-family:Lora;
+	font-weight:800;
+	font-size:10px;
+	
+	margin-top:29%;
+	font-weight:250;
+}
+.hand
+{	margin-top: 1%;	
+	text-indent: 80px;
+    font-family: 'Arizonia', cursive;
+	margin-left: -1%;
+	font-size:380%;
+}
+img
+{
+	height:30px;
+        width:20px
+
+}.b{
+	font-family: 'Kilogram';
+	font-size: 25px;
+	color: black;
+	padding: 20px 20px;
+	text-decoration: none;
+
+}
+h1{
+	font-family: 'Kilogram', sans-serif;
+	font-size: 500%;
+	color: black;
+	margin-left:30%;
+}
+div.featured{
+	margin: 0%;
+	background-color: #CACDCC;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin-top:20%;
+
+}
+
+
+h2{
+	text-indent: 60px;
+    font-family: 'Bevan', cursive;
+    color: black;
+}
+
+h3{
+	text-indent: 60px;
+	font-family: 'Lora', cursive;
+	
+}
+
+h4{
+	text-indent: 60px;
+	font-family: 'Bevan', cursive;
+}
+#top
+{
+	margin-left: -1em;
+	font-size: 90%
+}
+
+}
+
+</style>
+</head>
+<body>
+	<div class="front"></div>
+	<!-- <header class="intro-header" style="background-image: url('final_logo-2.png')">  -->
+<div class="title">
+           <img id="my-img" src="{% static 'images/S.png' %}" onmouseover="hover(this);" onmouseout="unhover(this);" />
+		  <ul>
+			<li><a class="b " href="{% url 'login' %}">Login</a></li>
+			<li><a class="b " href="{% url 'signup' %}">Sign up</a></li>
+          </ul>
+     
+		<!-- <div id="welcome">Welcome</div> -->
+		<div id="intro"><strong><h1>S C R I P T U S</strong></h1></div>
+	</div>
+			<div class="hand">Fundamental writes</div>
+	
+<!-- </header>  -->
+	<div class="featured">
+	<h1><div id="top">Top Posts</div></h1>
+	<br>
+	<br>
+	<h2><a href="{% url 'post_page' list.0.3 %}">Post No.1: {{ list.0.0 }}</a></h2>
+		<h3>Created by: {{ list.0.1 }} </h3>
+		<h4>Date: {{ list.0.2 }}</h4>
+	<h2><a href ="{% url 'post_page' list.1.3 %}">Post No.2: {{ list.1.0 }}</a></h2>
+		<h3>Created by: {{ list.1.1 }}</h3>
+		<h4>Date: {{ list.1.2 }}</h4>
+	<h2><a href="{% url 'post_page' list.2.3 %}">Post No.3: {{ list.2.0 }}</a></h2>
+		<h3>Created by: {{ list.2.1 }}</h3>
+		<h4>Date: {{ list.2.2 }}</h4>
+	<br>
+	<br>
+	<p class="archive"><a href="{% url 'archive' %}">Archive</a></p>
+	<br>
+	<br>
+	<br>
+	</div>
+<script>
+function hover(element){
+	element.setAttribute('src', "{% static 'images/s1.png' %}");
+}
+
+function unhover(element){
+	element.setAttribute('src', "{% static 'images/S.png' %}");
+}
+</script>
+</body>
+
+</html>

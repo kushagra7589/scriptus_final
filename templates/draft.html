@@ -1,0 +1,139 @@
+<!-- {% load staticfile %} -->
+
+<link href='https://fonts.googleapis.com/css?family=Sigmar+One|Bangers|Righteous|Permanent+Marker|Paytone+One|Lora|Luckiest+Guy' rel='stylesheet' type='text/css'>
+
+<link href='https://fonts.googleapis.com/css?family=Pacifico|Bevan|Alfa+Slab+One|Permanent+Marker|Paytone+One|Fugaz+One' rel='stylesheet' type='text/css'>
+
+<link href='https://fonts.googleapis.com/css?family=Montserrat|Fjalla+One|Anton|Francois+One' rel='stylesheet' type='text/css'>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+
+<style>
+
+    .b{
+        font-family: 'Kilogram';
+	    font-size: 25px;
+	   color: black;
+	   padding: 30px 10px;
+	   text-decoration: none;
+    }
+
+html { 
+/*    background: url('{ %url back.png}'),url('back.png') no-repeat center center fixed #000; */
+    background-color: #FDC153;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    li {
+        float: right;
+        display: inline;
+    }
+
+    }
+    .margin{
+        margin: auto;
+        height: 12%;
+    }
+    
+    .head{
+        position: absolute;
+        left: 10px;
+        top: 0px;
+        font-size: 25px;
+        font-family: 'Lora', serif;
+        text-decoration:none;
+        color: white;
+    }
+    
+    h1{
+	   font-family: 'Kilogram';
+	   font-size: 100px;
+	   color: white;
+	   text-align: center; 
+    }
+    
+    img{
+        position: absolute;
+        left: 10px;
+        top: 10px;
+	   height:60px;
+        width:40px
+    }
+    
+    a:hover{
+	color:#8585AD;
+    }
+    
+    .form1 {
+        background-color: rgba(0, 0 , 0, 0.60);
+        width: 900px;
+    }
+    
+    .center{
+        position: inherit;
+        margin-left: 15%;
+        margin-top: 5%;
+    }
+    @media screen and (max-width:786px){
+
+      .form1 {
+        background-color: rgba(0, 0 , 0, 0.60);
+        width: 90%;
+        margin-left:-2em;
+    } 
+    h1{
+       font-family: 'Kilogram';
+       font-size: 235%;
+       color: white;
+       text-align: center; 
+    } 
+    img{
+        position: absolute;
+        left: 10px;
+        top: 8px;
+       height:30px;
+        width:20px
+    
+    }
+    .margin{
+        margin: auto;
+        height:12%;
+    }
+    }
+</style>
+
+<body>
+    <div class="margin w3-teal">
+        <img id="my-img" src="S.png" onmouseover="hover(this);" onmouseout="unhover(this);" />
+        <ul>
+			<li><a class="b " href="login.html">Login</a></li>
+			<li><a class="b " href="signup.html">Sign up</a></li>
+        </ul>   
+    </div>
+    <div class="center">
+    <div class="form1">
+    <header>
+        <h1>Drafts</h1>
+    </header>
+    </div>
+    </div>
+<script>
+function hover(element){
+	element.setAttribute('src', 's1.png');
+}
+
+function unhover(element){
+	element.setAttribute('src', 'S.png');
+}
+</script>
+</body>

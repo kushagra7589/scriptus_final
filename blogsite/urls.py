@@ -19,6 +19,23 @@ from django.contrib import admin
 from blog import views
 
 urlpatterns = [
-	url(r'^$', views.home, name='home'),
+	url(r'^$', views.index, name='index'),
+    url(r'^login$', views.login_user, name='login'),
+    url(r'^signup$', views.register_user, name='signup'),
+    #url(r'^signup/register/$', views.registered, name = 'registered'),
+    url(r'^logout$', views.logout_user, name='logout'),
+    #url(r'^logout/register$', views.registered_user, name = "registered"),
+    url(r'^dashboard$', views.dashboard, name='dashboard'),
+    url(r'^createblog$', views.create_blog, name='create_blog'),
+    url(r'^blog-page/(?P<blog>[0-9]+)$', views.blog_page, name='blog_page'),
+    url(r'^add-post/([0-9]+)$', views.post_create, name='post_create'),
+    url(r'^post/([0-9]+)$', views.post_page, name='post_page'),
+    #url(r'^createblogpost$', views.create_blog_post, name='create_blog_post'),
+    # url(r'^blog/(?<blog_name>)\w+$', views.login_user, name='blog_display'),
+    url(r'^archive$', views.archive, name='archive'),
+    url(r'^archive/(?P<year>[0-9]{4})/(?P<month>[0-9]+)/(?P<day>[0-9]+)/$', views.archive_day, name='archive_day'),
+    url(r'^archive/(?P<year>[0-9]{4})/(?P<month>[0-9]+)/$', views.archive_month, name='archive_month'),
+    url(r'^archive/(?P<year>[0-9]{4})/$', views.archive_year, name='archive_year'),
+
     url(r'^admin/', include(admin.site.urls)),
 ]

@@ -1,0 +1,181 @@
+{% load staticfiles %}
+
+<link href='https://fonts.googleapis.com/css?family=Sigmar+One|Bangers|Righteous|Permanent+Marker|Paytone+One|Lora|Luckiest+Guy' rel='stylesheet' type='text/css'>
+
+<link href='https://fonts.googleapis.com/css?family=Pacifico|Bevan|Alfa+Slab+One|Permanent+Marker|Paytone+One|Fugaz+One' rel='stylesheet' type='text/css'>
+
+<link href='https://fonts.googleapis.com/css?family=Montserrat|Fjalla+One|Anton|Francois+One' rel='stylesheet' type='text/css'>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+
+<style>
+
+    .b{
+        font-family: 'Kilogram';
+	    font-size: 25px;
+	   color: black;
+	   padding: 30px 10px;
+	   text-decoration: none;
+    }
+
+html { 
+/*    background: url('{ %url back.png}'),url('back.png') no-repeat center center fixed #000; */
+    background-color: #FDC153;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    li {
+        float: right;
+        display: inline;
+    }
+
+    
+    .margin{
+        margin: auto;
+        height:10%;
+    }
+    
+    .head{
+        position: absolute;
+        left: 10px;
+        top: 0px;
+        font-size: 25px;
+        font-family: 'Lora', serif;
+        text-decoration:none;
+        color: white;
+    }
+     hr.style13 {
+    height: 10px;
+    border: 0;
+    box-shadow: 0 10px 10px -10px #8c8b8b inset;
+}
+    
+    h1{
+	   font-family: 'Kilogram';
+	   font-size: 100px;
+	   color: white;
+	   text-align: center; 
+    }
+    
+    img{
+        position: absolute;
+        left: 10px;
+        top: 10px;
+	   height:60px;
+        width:40px
+    }
+    
+    a:hover{
+	color:#8585AD;
+    }
+    
+    .form1 {
+        background-color: rgba(0, 0 , 0, 0.60);
+        width: 900px;
+    }
+    
+    .center{
+        position: inherit;
+        margin-left: 23%;
+        margin-top: 4%;
+    }
+    .post_name{
+    	font-family: sans-serif;
+    	font-size: 150%;
+    	margin-left: 4%;
+    }
+        .post_detail{
+    	font-family: Trebuchet;
+    	font-size: 100%;
+    	margin-left: 4%;
+    }
+    @media screen and (max-width: 786px){
+
+        .hand
+{   margin-top: 1%; 
+    text-indent: 80px;
+    font-family: 'Arizonia', cursive;
+    margin-left: 2%;
+    font-size:400%;
+}
+img
+{
+    height:30px;
+        width:20px
+
+}
+ h1{
+       font-family: 'Kilogram';
+       font-size: 350%;
+       color: white;
+       text-align: center; 
+    }
+    .form1 {
+        background-color: rgba(0, 0 , 0, 0.60);
+        width: 450px;
+        margin-left: -2em;
+    }
+    .margin{
+        margin: auto;
+        height:12%;
+    }
+
+}
+</style>
+
+<body>
+    <div class="margin w3-teal ">
+        {% if user.is_authenticated %}  
+            <a href="{% url 'dashboard' %}"> <img id="my-img" src="{% static 'images/S.png' %}" onmouseover="hover(this);" onmouseout="unhover(this);" /></a>
+            <ul>
+            <li><a class="b " href="#">{{ request.user }}</a></li>
+            <li><a class="b " href="{% url 'logout' %}">Logout</a></li>
+        {% else %}
+            <a href="{% url 'index' %}"> <img id="my-img" src="{% static 'images/S.png' %}" onmouseover="hover(this);" onmouseout="unhover(this);" /></a>
+            <li><a class="b " href="{% url 'login' %}">Login</a></li>
+            <li><a class="b " href="{% url 'signup' %}">Sign up</a></li>
+        {% endif %}  
+    </div>
+    <div class="center">
+    <div class="form1">
+    <header>
+    	{% if date %}
+        <h1>DATE: {{ year }}/{{ month }}/{{ date }}</h1>
+    	{% elif month %}
+    	<h1>MONTH: {{ year}}/{{ month }}</h1>
+    	{% else %}
+    	<h1>YEAR: {{ year }}</h1>
+    	{% endif %}
+    </header>
+    </div>
+    </div>
+    {% if post %}
+    {% for i in post %}
+    <h5 class="post_name"><a href="{% url 'post_page' i.1 %}"><strong>{{ i.0 }}</strong></a></h5>
+    <p class = "post_detail" >Likes: {{ i.2 }} Comments: {{ i.3 }}</p>
+    <hr class="style13">
+    {% endfor %}
+    {% else %}
+    <h5>You have no posts to display!</h5>
+    <hr class="style13">
+    {% endif %}
+<script>
+function hover(element){
+    element.setAttribute('src', "{% static 'images/s1.png' %}");
+}
+
+function unhover(element){
+    element.setAttribute('src', "{% static 'images/S.png' %}");
+}
+</script>
+</body>
